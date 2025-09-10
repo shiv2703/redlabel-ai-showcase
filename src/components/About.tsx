@@ -1,10 +1,7 @@
-import AboutBackground from "@/components/3D/AboutBackground";
-
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-background relative overflow-hidden">
-      <AboutBackground />
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="about" className="py-20 bg-background">
+      <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground animate-fade-in">
             About <span className="text-primary">redlabel.ai</span>

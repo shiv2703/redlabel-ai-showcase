@@ -1,21 +1,17 @@
 import { Button } from "@/components/ui/button";
-import HeroScene from "@/components/3D/HeroScene";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* 3D Background Scene */}
-      <HeroScene />
-      
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/95 to-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/80" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
