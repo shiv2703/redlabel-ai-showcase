@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import webDevIcon from "@/assets/web-dev-icon.jpg";
-import aiSolutionsIcon from "@/assets/ai-solutions-icon.jpg";
+import ServiceIcon3D from "@/components/3D/ServiceIcon3D";
 
 const Services = () => {
   return (
@@ -16,14 +15,10 @@ const Services = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <Card className="group hover:shadow-glow-red transition-all duration-300 border-border/50 bg-card/50 backdrop-blur-sm">
+          <Card className="group hover:shadow-glow-red transition-all duration-500 border-border/50 bg-card/50 backdrop-blur-sm hover:scale-105 animate-fade-in">
             <CardHeader>
-              <div className="w-16 h-16 rounded-lg overflow-hidden mb-4">
-                <img 
-                  src={webDevIcon} 
-                  alt="Web Development" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="mb-4 animate-float">
+                <ServiceIcon3D type="web" />
               </div>
               <CardTitle className="text-2xl text-foreground group-hover:text-primary transition-colors">
                 Web Development
@@ -58,14 +53,10 @@ const Services = () => {
             </CardContent>
           </Card>
           
-          <Card className="group hover:shadow-glow-red transition-all duration-300 border-border/50 bg-card/50 backdrop-blur-sm">
+          <Card className="group hover:shadow-glow-red transition-all duration-500 border-border/50 bg-card/50 backdrop-blur-sm hover:scale-105 animate-fade-in">
             <CardHeader>
-              <div className="w-16 h-16 rounded-lg overflow-hidden mb-4">
-                <img 
-                  src={aiSolutionsIcon} 
-                  alt="AI Solutions" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="mb-4 animate-float" style={{ animationDelay: '2s' }}>
+                <ServiceIcon3D type="ai" />
               </div>
               <CardTitle className="text-2xl text-foreground group-hover:text-primary transition-colors">
                 AI Solutions
