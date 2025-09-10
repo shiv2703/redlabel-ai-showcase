@@ -1,10 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Navigation from "./components/Navigation";
+
 const App = () => (
-  <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-    <div className="text-center">
-      <h1 className="text-4xl font-bold mb-4">redlabel.ai</h1>
-      <p className="text-xl">Web Development & AI Solutions</p>
+  <BrowserRouter>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
-  </div>
+  </BrowserRouter>
 );
 
 export default App;
