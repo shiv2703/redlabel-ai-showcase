@@ -1,87 +1,187 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import Scene3D from "@/components/3D/Scene3D";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Code, Brain, Zap, Users, Target, Award } from "lucide-react";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* 3D Background */}
-        <Scene3D 
-          objects={[
-            { position: [3, 0, -2], type: 'sphere', color: '#dc2626', speed: 0.8 },
-            { position: [-4, 2, -1], type: 'box', color: '#b91c1c', speed: 1.2 },
-            { position: [2, -1, -3], type: 'torus', color: '#f87171', speed: 0.6 },
-            { position: [-2, -2, -2], type: 'sphere', color: '#ef4444', speed: 0.9 },
-          ]}
-        />
+      <section className="relative h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+        {/* Background Image Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
         
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/95 to-background/85" />
-        
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-6 text-center">
-          <div className="max-w-4xl mx-auto animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Web Development
-              <br />
-              <span className="text-foreground">Meets AI Innovation</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up">
-              We craft exceptional websites and deliver cutting-edge AI solutions that transform your business. 
-              From concept to deployment, we're your technology partner.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up">
-              <Link to="/services">
-                <Button size="lg" className="bg-gradient-primary hover:shadow-glow-red transition-all duration-300 animate-pulse-glow">
-                  Explore Services
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  Get Started
-                </Button>
-              </Link>
+        <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-[0.2em] leading-tight">
+            THE FUTURE OF
+            <br />
+            <span className="text-primary">WEB DEVELOPMENT</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl leading-relaxed">
+            Discover cutting-edge AI solutions and modern web development with redlabel.ai
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg tracking-wide">
+              Get Started <ArrowRight className="ml-2" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-12 py-6 text-lg tracking-wide">
+              View Our Work
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-[0.15em]">
+              VISION
+            </h2>
+            <h3 className="text-2xl md:text-4xl text-gray-700 mb-12 font-light">
+              We're Changing the Way the World Thinks About Technology
+            </h3>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
+                At redlabel.ai, we combine cutting-edge artificial intelligence with modern web development 
+                to create digital experiences that push the boundaries of what's possible.
+              </p>
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                Our vision is to make advanced technology accessible and transformative for businesses worldwide, 
+                delivering solutions that not only meet today's needs but anticipate tomorrow's challenges.
+              </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-2 animate-fade-in">
-                <div className="text-3xl font-bold text-primary">50+</div>
-                <div className="text-muted-foreground">Websites Delivered</div>
-              </div>
-              <div className="space-y-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <div className="text-3xl font-bold text-primary">30+</div>
-                <div className="text-muted-foreground">AI Solutions</div>
-              </div>
-              <div className="space-y-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <div className="text-3xl font-bold text-primary">100%</div>
-                <div className="text-muted-foreground">Client Satisfaction</div>
-              </div>
+          </div>
+          
+          {/* Stats */}
+          <div className="grid md:grid-cols-3 gap-8 mt-20">
+            <div className="text-center">
+              <div className="text-5xl font-bold text-primary mb-4">100+</div>
+              <div className="text-xl text-gray-700 tracking-wide">Projects Delivered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-primary mb-4">24/7</div>
+              <div className="text-xl text-gray-700 tracking-wide">AI-Powered Support</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-primary mb-4">99%</div>
+              <div className="text-xl text-gray-700 tracking-wide">Client Satisfaction</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 bg-gradient-secondary relative">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground animate-fade-in">
-            About <span className="text-primary">redlabel.ai</span>
-          </h2>
+      {/* Services Preview */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-[0.15em]">
+              SERVICES
+            </h2>
+            <h3 className="text-2xl md:text-4xl text-gray-700 mb-12 font-light">
+              We Deliver Exceptional Digital Solutions Around the World
+            </h3>
+          </div>
           
-          <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed animate-slide-up">
-            <p>
-              At redlabel.ai, we're passionate about creating digital experiences that make a difference. 
-              Our team combines years of web development expertise with cutting-edge AI technology to 
-              deliver solutions that drive real business results.
-            </p>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <CardHeader className="text-center pb-6 pt-12">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Code className="w-10 h-10 text-primary" />
+                </div>
+                <CardTitle className="text-2xl font-bold tracking-[0.1em] mb-4">
+                  WEB DEVELOPMENT
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pb-12">
+                <CardDescription className="text-center text-gray-600 text-lg leading-relaxed">
+                  Modern, responsive websites built with cutting-edge technologies 
+                  and optimized for performance and user experience.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <CardHeader className="text-center pb-6 pt-12">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Brain className="w-10 h-10 text-primary" />
+                </div>
+                <CardTitle className="text-2xl font-bold tracking-[0.1em] mb-4">
+                  AI SOLUTIONS
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pb-12">
+                <CardDescription className="text-center text-gray-600 text-lg leading-relaxed">
+                  Intelligent automation, machine learning models, and AI-powered 
+                  applications that transform your business processes.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <CardHeader className="text-center pb-6 pt-12">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Zap className="w-10 h-10 text-primary" />
+                </div>
+                <CardTitle className="text-2xl font-bold tracking-[0.1em] mb-4">
+                  DIGITAL INNOVATION
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pb-12">
+                <CardDescription className="text-center text-gray-600 text-lg leading-relaxed">
+                  Future-ready digital strategies that position your business 
+                  at the forefront of technological advancement.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-12 py-6 text-lg tracking-wide">
+              View All Services
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-[0.15em]">
+              WHY CHOOSE US
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 tracking-wide">EXPERT TEAM</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Our team of experienced developers and AI specialists bring years of expertise to every project.
+              </p>
+            </div>
             
-            <p className="text-primary font-semibold">
-              Ready to transform your business? Let's build something amazing together.
-            </p>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Target className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 tracking-wide">PRECISION DELIVERY</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                We deliver projects on time and within budget, with meticulous attention to detail.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 tracking-wide">PROVEN RESULTS</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Our track record speaks for itself with successful projects across diverse industries.
+              </p>
+            </div>
           </div>
         </div>
       </section>

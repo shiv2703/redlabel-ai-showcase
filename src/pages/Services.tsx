@@ -1,142 +1,208 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import Scene3D from "@/components/3D/Scene3D";
+import { Code, Brain, Smartphone, Database, Cloud, Shield, ArrowRight, CheckCircle } from "lucide-react";
 
 const Services = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        {/* 3D Background */}
-        <Scene3D 
-          objects={[
-            { position: [3, 1, -2], type: 'box', color: '#dc2626', speed: 0.7 },
-            { position: [-3, -1, -1], type: 'sphere', color: '#b91c1c', speed: 1.1 },
-            { position: [0, 2, -3], type: 'torus', color: '#f87171', speed: 0.5 },
-          ]}
-        />
+      <section className="relative h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+        <div className="absolute inset-0 bg-black/50"></div>
         
-        <div className="absolute inset-0 bg-gradient-radial" />
-        
-        <div className="relative z-10 container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
-            Our Services
+        <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-[0.2em] leading-tight">
+            OUR
+            <br />
+            <span className="text-primary">SERVICES</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up">
-            We combine creative design with advanced technology to deliver exceptional results
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl leading-relaxed">
+            We Deliver Exceptional Digital Solutions Around the World
           </p>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-gradient-secondary">
+      {/* Web Development Section */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-[0.1em]">
+                WEB
+                <br />
+                DEVELOPMENT
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                Modern, responsive websites and applications built with cutting-edge technologies. 
+                We create digital experiences that engage users and drive business growth.
+              </p>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center">
+                  <CheckCircle className="w-6 h-6 text-primary mr-4" />
+                  <span className="text-lg text-gray-700">React & Next.js Applications</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-6 h-6 text-primary mr-4" />
+                  <span className="text-lg text-gray-700">E-commerce Solutions</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-6 h-6 text-primary mr-4" />
+                  <span className="text-lg text-gray-700">Progressive Web Apps</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-6 h-6 text-primary mr-4" />
+                  <span className="text-lg text-gray-700">SEO Optimization</span>
+                </div>
+              </div>
+
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg tracking-wide">
+                Learn More <ArrowRight className="ml-2" />
+              </Button>
+            </div>
             
-            {/* Web Development Service */}
-            <Card className="group hover:shadow-glow-red transition-all duration-500 border-border/50 bg-card/50 backdrop-blur-sm hover:scale-105 animate-fade-in">
-              <CardHeader>
-                <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 animate-float shadow-glow-red">
-                  <span className="text-2xl">💻</span>
-                </div>
-                <CardTitle className="text-2xl text-foreground group-hover:text-primary transition-colors">
-                  Web Development
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Custom websites that drive results
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">
-                  From stunning landing pages to complex web applications, we build responsive, 
-                  fast, and SEO-optimized websites that convert visitors into customers.
+            <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
+              <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                <Code className="w-12 h-12 text-primary" />
+              </div>
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Modern Technologies</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We use the latest frameworks and tools to ensure your website is fast, 
+                  secure, and scalable for the future.
                 </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                    Responsive Design
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                    Performance Optimization
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                    SEO Integration
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                    E-commerce Solutions
-                  </li>
-                </ul>
-                <div className="pt-4">
-                  <Button className="w-full bg-gradient-primary hover:shadow-glow-red transition-all duration-300">
-                    Learn More
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* AI Solutions Service */}
-            <Card className="group hover:shadow-glow-red transition-all duration-500 border-border/50 bg-card/50 backdrop-blur-sm hover:scale-105 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <CardHeader>
-                <div className="w-16 h-16 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 animate-float shadow-glow-red" style={{ animationDelay: '2s' }}>
-                  <span className="text-2xl">🤖</span>
-                </div>
-                <CardTitle className="text-2xl text-foreground group-hover:text-primary transition-colors">
-                  AI Solutions
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Intelligent automation for your business
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">
-                  Harness the power of artificial intelligence to automate processes, 
-                  gain insights, and enhance user experiences with our custom AI solutions.
+      {/* AI Solutions Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="bg-white rounded-2xl p-8 lg:p-12 order-2 lg:order-1">
+              <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                <Brain className="w-12 h-12 text-primary" />
+              </div>
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Intelligent Automation</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Transform your business processes with AI-powered solutions that learn, 
+                  adapt, and optimize automatically.
                 </p>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                    Chatbots & Virtual Assistants
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                    Data Analytics & Insights
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                    Process Automation
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                    Machine Learning Models
-                  </li>
-                </ul>
-                <div className="pt-4">
-                  <Button className="w-full bg-gradient-primary hover:shadow-glow-red transition-all duration-300">
-                    Learn More
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
+            <div className="order-1 lg:order-2">
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-[0.1em]">
+                AI
+                <br />
+                SOLUTIONS
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                Harness the power of artificial intelligence to automate processes, 
+                gain insights, and create intelligent applications that give you a competitive edge.
+              </p>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center">
+                  <CheckCircle className="w-6 h-6 text-primary mr-4" />
+                  <span className="text-lg text-gray-700">Chatbots & Virtual Assistants</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-6 h-6 text-primary mr-4" />
+                  <span className="text-lg text-gray-700">Machine Learning Models</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-6 h-6 text-primary mr-4" />
+                  <span className="text-lg text-gray-700">Data Analytics & Insights</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-6 h-6 text-primary mr-4" />
+                  <span className="text-lg text-gray-700">Process Automation</span>
+                </div>
+              </div>
+
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg tracking-wide">
+                Explore AI <ArrowRight className="ml-2" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-[0.15em]">
+              ADDITIONAL SERVICES
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive solutions to cover all your digital needs
+            </p>
           </div>
 
-          {/* CTA Section */}
-          <div className="text-center mt-16 animate-slide-up">
-            <h3 className="text-3xl font-bold mb-4 text-foreground">
-              Ready to Get Started?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Let's discuss your project and see how our services can help you achieve your goals.
-            </p>
-            <Link to="/contact">
-              <Button size="lg" className="bg-gradient-primary hover:shadow-glow-red transition-all duration-300 animate-pulse-glow">
-                Contact Us Today
-              </Button>
-            </Link>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center p-8">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Smartphone className="w-8 h-8 text-primary" />
+              </div>
+              <CardTitle className="text-xl font-bold mb-4 tracking-wide">Mobile Apps</CardTitle>
+              <CardDescription className="text-gray-600 leading-relaxed">
+                Cross-platform mobile solutions for iOS and Android
+              </CardDescription>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center p-8">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Database className="w-8 h-8 text-primary" />
+              </div>
+              <CardTitle className="text-xl font-bold mb-4 tracking-wide">Database Design</CardTitle>
+              <CardDescription className="text-gray-600 leading-relaxed">
+                Scalable database architecture and optimization
+              </CardDescription>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center p-8">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Cloud className="w-8 h-8 text-primary" />
+              </div>
+              <CardTitle className="text-xl font-bold mb-4 tracking-wide">Cloud Solutions</CardTitle>
+              <CardDescription className="text-gray-600 leading-relaxed">
+                AWS, Azure, and GCP deployment and management
+              </CardDescription>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center p-8">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-primary" />
+              </div>
+              <CardTitle className="text-xl font-bold mb-4 tracking-wide">Security</CardTitle>
+              <CardDescription className="text-gray-600 leading-relaxed">
+                Enterprise-grade security and compliance solutions
+              </CardDescription>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-[0.1em]">
+            READY TO START?
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Let's discuss how our services can help you achieve your digital transformation goals
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg tracking-wide">
+              Start Your Project <ArrowRight className="ml-2" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-12 py-6 text-lg tracking-wide">
+              Schedule Consultation
+            </Button>
           </div>
         </div>
       </section>

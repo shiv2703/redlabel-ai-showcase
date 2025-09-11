@@ -1,159 +1,169 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import Scene3D from "@/components/3D/Scene3D";
+import { Label } from "@/components/ui/label";
+import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        {/* 3D Background */}
-        <Scene3D 
-          objects={[
-            { position: [2, 0, -2], type: 'torus', color: '#dc2626', speed: 0.6 },
-            { position: [-2, 1, -1], type: 'sphere', color: '#b91c1c', speed: 0.9 },
-            { position: [0, -1, -3], type: 'box', color: '#f87171', speed: 0.7 },
-          ]}
-        />
+      <section className="relative h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+        <div className="absolute inset-0 bg-black/50"></div>
         
-        <div className="absolute inset-0 bg-gradient-radial" />
-        
-        <div className="relative z-10 container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-fade-in">
-            Let's Connect
+        <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-[0.2em] leading-tight">
+            GET IN
+            <br />
+            <span className="text-primary">TOUCH</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up">
-            Ready to start your project? Get in touch and let's discuss how we can help you succeed.
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl leading-relaxed">
+            Ready to transform your business with AI and modern web solutions? Let's start the conversation.
           </p>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-20 bg-gradient-secondary">
+      {/* Contact Section */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
+          <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Information */}
-            <div className="space-y-6 animate-fade-in">
-              <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-foreground">Get in Touch</CardTitle>
-                  <CardDescription>
-                    Let's discuss your project and explore how we can help you achieve your goals.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow-red">
-                      <span className="text-primary-foreground text-sm">📧</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">Email</div>
-                      <div className="text-muted-foreground">hello@redlabel.ai</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow-red">
-                      <span className="text-primary-foreground text-sm">💬</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">Let's Talk</div>
-                      <div className="text-muted-foreground">Schedule a call to discuss your needs</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow-red">
-                      <span className="text-primary-foreground text-sm">⚡</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">Fast Response</div>
-                      <div className="text-muted-foreground">We typically respond within 24 hours</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div>
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-[0.1em]">
+                LET'S
+                <br />
+                CONNECT
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">
+                We're here to help you bring your digital vision to life. 
+                Reach out and let's discuss your project.
+              </p>
 
-              {/* Services Quick Links */}
-              <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-foreground">Our Services</CardTitle>
-                  <CardDescription>
-                    Interested in specific services? Let us know what you need.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-background/50 hover:bg-primary/10 transition-colors">
-                    <span className="text-foreground">Web Development</span>
-                    <span className="text-primary">→</span>
+              <div className="space-y-8">
+                <div className="flex items-start space-x-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-8 h-8 text-primary" />
                   </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-background/50 hover:bg-primary/10 transition-colors">
-                    <span className="text-foreground">AI Solutions</span>
-                    <span className="text-primary">→</span>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 tracking-wide">EMAIL US</h3>
+                    <p className="text-lg text-gray-700 mb-1">hello@redlabel.ai</p>
+                    <p className="text-gray-500">We'll respond within 24 hours</p>
                   </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-background/50 hover:bg-primary/10 transition-colors">
-                    <span className="text-foreground">Custom Development</span>
-                    <span className="text-primary">→</span>
+                </div>
+
+                <div className="flex items-start space-x-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-8 h-8 text-primary" />
                   </div>
-                </CardContent>
-              </Card>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 tracking-wide">SCHEDULE A CALL</h3>
+                    <p className="text-lg text-gray-700 mb-1">Book a free consultation</p>
+                    <p className="text-gray-500">Available Monday - Friday, 9AM - 6PM EST</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-8 h-8 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 tracking-wide">LOCATION</h3>
+                    <p className="text-lg text-gray-700 mb-1">Global Remote Team</p>
+                    <p className="text-gray-500">Serving clients worldwide</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-8 h-8 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 tracking-wide">RESPONSE TIME</h3>
+                    <p className="text-lg text-gray-700 mb-1">Within 24 hours</p>
+                    <p className="text-gray-500">Usually much faster!</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            
+
             {/* Contact Form */}
-            <Card className="border-border/50 bg-card/50 backdrop-blur-sm animate-slide-up">
-              <CardHeader>
-                <CardTitle className="text-foreground">Send us a Message</CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you soon.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
+              <h3 className="text-3xl font-bold text-gray-900 mb-8 tracking-wide">
+                SEND US A MESSAGE
+              </h3>
+              
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <Label htmlFor="name" className="text-gray-900 font-semibold mb-3 block tracking-wide">
+                      NAME
+                    </Label>
+                    <Input 
+                      id="name" 
+                      placeholder="Your name" 
+                      className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 h-14 text-lg"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email" className="text-gray-900 font-semibold mb-3 block tracking-wide">
+                      EMAIL
+                    </Label>
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="your@email.com" 
+                      className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 h-14 text-lg"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <Label htmlFor="subject" className="text-gray-900 font-semibold mb-3 block tracking-wide">
+                    SUBJECT
+                  </Label>
                   <Input 
-                    placeholder="Your Name" 
-                    className="bg-background/50 border-border hover:border-primary/50 transition-colors" 
-                  />
-                  <Input 
-                    placeholder="Your Email" 
-                    type="email" 
-                    className="bg-background/50 border-border hover:border-primary/50 transition-colors" 
+                    id="subject" 
+                    placeholder="Project inquiry" 
+                    className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 h-14 text-lg"
                   />
                 </div>
-                <Input 
-                  placeholder="Subject" 
-                  className="bg-background/50 border-border hover:border-primary/50 transition-colors" 
-                />
-                <Textarea 
-                  placeholder="Tell us about your project..." 
-                  className="min-h-[120px] bg-background/50 border-border hover:border-primary/50 transition-colors" 
-                />
-                <Button className="w-full bg-gradient-primary hover:shadow-glow-red transition-all duration-300">
-                  Send Message
+                
+                <div>
+                  <Label htmlFor="message" className="text-gray-900 font-semibold mb-3 block tracking-wide">
+                    MESSAGE
+                  </Label>
+                  <Textarea 
+                    id="message" 
+                    rows={6} 
+                    placeholder="Tell us about your project..." 
+                    className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 text-lg resize-none"
+                  />
+                </div>
+                
+                <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg font-semibold tracking-wide">
+                  SEND MESSAGE <ArrowRight className="ml-2" />
                 </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center mt-16 animate-fade-in">
-            <h3 className="text-3xl font-bold mb-4 text-foreground">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Join our satisfied clients who have transformed their businesses with our web development and AI solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="bg-gradient-primary hover:shadow-glow-red transition-all duration-300">
-                Schedule a Consultation
-              </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                View Our Portfolio
-              </Button>
+              </form>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-[0.1em]">
+            READY TO START
+            <br />
+            YOUR PROJECT?
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Join hundreds of satisfied clients who have transformed their businesses with our solutions
+          </p>
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg tracking-wide">
+            Schedule Free Consultation <ArrowRight className="ml-2" />
+          </Button>
         </div>
       </section>
     </div>
