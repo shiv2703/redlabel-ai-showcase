@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>redlabel.ai - Web Development & AI Solutions</title>
+    <meta name="description" content="Professional web development and AI solutions company. We create exceptional websites and deliver cutting-edge AI automation for your business." />
+    <meta name="author" content="redlabel.ai" />
+
+    <meta property="og:title" content="redlabel.ai - Web Development & AI Solutions" />
+    <meta property="og:description" content="Professional web development and AI solutions company. We create exceptional websites and deliver cutting-edge AI automation for your business." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <script type="module" crossorigin src="/assets/index-C5CgcrZc.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CTGGcSm5.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <style>
+      html { scroll-behavior: smooth; }
+      /* Tube-light sweep */
+      @keyframes tubeSweep {
+        0% { left: -20%; opacity: 0; }
+        10% { opacity: .9; }
+        50% { left: 50%; opacity: 1; }
+        90% { opacity: .9; }
+        100% { left: 120%; opacity: 0; }
+      }
+      @keyframes tubeFlicker {
+        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+        20%, 24%, 55% { opacity: .55; }
+      }
+      @keyframes tubeGlowPulse {
+        0%, 100% { opacity: .55; filter: blur(14px); }
+        50% { opacity: .85; filter: blur(18px); }
+      }
+      .tube-track { position: relative; overflow: visible; }
+      .tube-sweep { position: absolute; top: 0; height: 8px; width: 38%; filter: blur(10px); background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,0)); animation: tubeSweep 3s ease-in-out infinite, tubeFlicker 2.2s infinite; }
+      .tube-glow { position: absolute; top: 10px; left: 0; right: 0; height: 28px; background: radial-gradient(closest-side, rgba(59,130,246,.40), transparent 70%); animation: tubeGlowPulse 2.8s ease-in-out infinite; }
+
+      /* Site-wide animated background */
+      @keyframes floatNoise {
+        0% { background-position: 0 0, 0 0; }
+        50% { background-position: 50px 100px, -60px -40px; }
+        100% { background-position: 0 0, 0 0; }
+      }
+      .bg-fx {
+        position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .25;
+        background-image: radial-gradient(600px 300px at 20% 20%, rgba(220,38,38,.25), transparent), radial-gradient(500px 280px at 80% 60%, rgba(99,102,241,.25), transparent);
+        animation: floatNoise 18s ease-in-out infinite;
+      }
+    </style>
+  </body>
+</html>
