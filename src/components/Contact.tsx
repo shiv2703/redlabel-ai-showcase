@@ -32,7 +32,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Email</div>
-                    <div className="text-muted-foreground">hello@redlabel.ai</div>
+                    <div className="text-muted-foreground">support@redlabelworks.com</div>
                   </div>
                 </div>
                 
@@ -68,14 +68,28 @@ const Contact = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Input placeholder="Your Name" className="bg-background/50" />
-                <Input placeholder="Your Email" type="email" className="bg-background/50" />
+                <Input placeholder="First Name" className="bg-background/50" />
+                <Input placeholder="Last Name" className="bg-background/50" />
               </div>
-              <Input placeholder="Subject" className="bg-background/50" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Input placeholder="Phone" type="tel" className="bg-background/50" />
+                <Input placeholder="Email" type="email" className="bg-background/50" />
+              </div>
+              <div>
+                <select className="w-full h-11 bg-background/50 border border-border rounded-md px-3">
+                  <option value="">Role / Area of interest</option>
+                  <option value="ai">AI</option>
+                  <option value="software-development">Software Development</option>
+                  <option value="web-development">Web Development</option>
+                  <option value="vr">Virtual Reality</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
               <Textarea 
-                placeholder="Tell us about your project..." 
+                placeholder="Message (optional)" 
                 className="min-h-[120px] bg-background/50" 
               />
+              <Input type="file" accept=".pdf,.doc,.docx" className="bg-background/50" />
               <Button className="w-full bg-gradient-primary hover:shadow-glow-red transition-all duration-300">
                 Send Message
               </Button>

@@ -105,3 +105,39 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* --------------------------------------------------
+   Tube Light Prototype (Figma-like)
+-------------------------------------------------- */
+@keyframes tubeHotspot {
+  0% { left: -15%; opacity: 0; }
+  10% { opacity: .9; }
+  50% { left: 50%; opacity: 1; }
+  90% { opacity: .9; }
+  100% { left: 115%; opacity: 0; }
+}
+@keyframes tubeFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: .55; }
+}
+@keyframes tubeBaseGlow {
+  0%, 100% { box-shadow: 0 0 24px rgba(239,68,68,.45), 0 0 6px rgba(255,255,255,.25) inset; }
+  50% { box-shadow: 0 0 36px rgba(239,68,68,.7), 0 0 10px rgba(255,255,255,.35) inset; }
+}
+.tube-container { position: relative; width: 100%; display: flex; justify-content: center; }
+.tube { position: relative; width: min(720px, 80vw); height: 10px; border-radius: 9999px; overflow: hidden; background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0)), linear-gradient(90deg, rgba(239,68,68,.9), rgba(239,68,68,.95)); animation: tubeBaseGlow 3.2s ease-in-out infinite; }
+.tube::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(255,255,255,.25), transparent 70%); opacity: .5; }
+.tube-hotspot { position: absolute; top: 0; height: 100%; width: 22%; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,0)); filter: blur(10px); animation: tubeHotspot 3s ease-in-out infinite, tubeFlicker 2.2s infinite; }
+.tube-shadow { position: relative; width: min(720px, 80vw); height: 26px; margin-top: 8px; border-radius: 9999px; background: radial-gradient(ellipse at center, rgba(0,0,0,.55), rgba(0,0,0,0) 70%); filter: blur(8px); opacity: .6; }
+
+/* Backward compatible classes used earlier */
+.tube-track { position: relative; overflow: visible; background: rgba(239,68,68,0.6); border-radius: 9999px; }
+.tube-sweep { position: absolute; top: 0; left: -60%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.95), transparent); animation: tubeHotspot 3s ease-in-out infinite; filter: blur(10px); }
+.tube-glow { position: absolute; top: 8px; left: 0; right: 0; height: 26px; background: radial-gradient(circle, rgba(239,68,68,0.5), transparent 70%); filter: blur(12px); opacity: .9; pointer-events: none; }
+
+/* Hover-controlled hero lighting */
+.hero-light .tube, .hero-light .tube-hotspot, .hero-light .tube-shadow { opacity: 0; transition: opacity .35s ease; }
+.hero-light:hover .tube, .hero-light:hover .tube-hotspot, .hero-light:hover .tube-shadow { opacity: 1; }
+.hero-title { transition: text-shadow .35s ease, filter .35s ease; }
+.hero-light:hover .hero-title { text-shadow: 0 0 26px rgba(239,68,68,.65), 0 0 10px rgba(255,255,255,.6); filter: brightness(1.1); }
+

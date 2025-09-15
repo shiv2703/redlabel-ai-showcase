@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const location = useLocation();
@@ -19,7 +18,7 @@ const Navigation = () => {
                 location.pathname === '/' ? 'text-white' : ''
               }`}
             >
-              Technology
+              Home
             </Link>
             <Link 
               to="/services" 
@@ -27,7 +26,7 @@ const Navigation = () => {
                 location.pathname === '/services' ? 'text-white' : ''
               }`}
             >
-              About
+              Services
             </Link>
             <Link 
               to="/contact" 
@@ -35,13 +34,9 @@ const Navigation = () => {
                 location.pathname === '/contact' ? 'text-white' : ''
               }`}
             >
-              Careers
+              Contact
             </Link>
           </div>
-          
-          <Button className="bg-white text-black hover:bg-gray-200 px-8 py-3 font-semibold tracking-wide">
-            Subscribe
-          </Button>
         </div>
       </div>
     </nav>
