@@ -2,11 +2,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Code, Brain, Smartphone, Database, Cloud, Shield, ArrowRight, CheckCircle, Car, Truck, Factory, Store, Stethoscope, Banknote } from "lucide-react";
 import VideoBackground from "@/components/VideoBackground";
+import HelpersDemo from "@/components/Three/HelpersDemo";
+import FloatingLaptop from "@/components/Three/FloatingLaptop";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import DigitalInnovation from "@/components/Three/DigitalInnovation";
 
 const Services = () => {
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-0">
       {/* Hero Section */}
       <section className="relative h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
         <div className="absolute inset-0">
@@ -73,7 +76,7 @@ const Services = () => {
             
             <div className="bg-gray-50 rounded-2xl p-0 lg:p-0 overflow-hidden">
               <div className="relative h-64 md:h-80">
-                <VideoBackground src="/videos/web-dev.mp4" poster="/placeholder.svg" />
+                <FloatingLaptop />
               </div>
               <div className="p-8 lg:p-12 text-center">
                 <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
@@ -95,9 +98,9 @@ const Services = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="bg-white rounded-2xl p-0 lg:p-0 order-2 lg:order-1 overflow-hidden">
               <div className="relative h-64 md:h-80">
-                <VideoBackground src="/videos/ai-solutions.mp4" poster="/placeholder.svg" />
+                <HelpersDemo />
               </div>
-              <div className="p-8 lg:p-12 text-center">
+              <div className="relative p-8 lg:p-12 text-center z-10 bg-white/90 backdrop-blur">
                 <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
                   <Brain className="w-12 h-12 text-primary" />
                 </div>
@@ -188,7 +191,7 @@ const Services = () => {
             </div>
             <div className="bg-gray-50 rounded-2xl overflow-hidden">
               <div className="relative h-64 md:h-80">
-                <VideoBackground src="/videos/hero.mp4" poster="/placeholder.svg" />
+                <DigitalInnovation/>
               </div>
               <div className="p-12 text-center">
                 <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
@@ -356,12 +359,16 @@ const Services = () => {
             Let's discuss how our services can help you achieve your digital transformation goals
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg tracking-wide">
-              Start Your Project <ArrowRight className="ml-2" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-12 py-6 text-lg tracking-wide">
-              Schedule Consultation
-            </Button>
+            <a href="/contact">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg tracking-wide">
+                Start Your Project <ArrowRight className="ml-2" />
+              </Button>
+            </a>
+            <a href="/contact">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-12 py-6 text-lg tracking-wide">
+                Schedule Consultation
+              </Button>
+            </a>
           </div>
         </div>
       </section>

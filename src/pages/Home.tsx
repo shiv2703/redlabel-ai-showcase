@@ -1,8 +1,42 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Code, Brain, Zap, Users, Target, Award } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const phrases = ["WEB DEVELOPMENT", "AI SOLUTIONS", "DIGITAL INNOVATION"];
+  const [displayText, setDisplayText] = useState("");
+  const [phaseIndex, setPhaseIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentFull = phrases[phaseIndex % phrases.length];
+    const delta = isDeleting ? 40 : 80; // typing speeds
+    const pauseAtEnd = 1200;
+    const pauseAtStart = 400;
+
+    const tick = () => {
+      if (!isDeleting) {
+        const next = currentFull.slice(0, displayText.length + 1);
+        setDisplayText(next);
+        if (next === currentFull) {
+          setTimeout(() => setIsDeleting(true), pauseAtEnd);
+        }
+      } else {
+        const next = currentFull.slice(0, Math.max(0, displayText.length - 1));
+        setDisplayText(next);
+        if (next.length === 0) {
+          setIsDeleting(false);
+          setPhaseIndex((i) => (i + 1) % phrases.length);
+          setTimeout(() => {}, pauseAtStart);
+        }
+      }
+    };
+
+    const timer = setTimeout(tick, delta);
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, phaseIndex]);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -26,7 +60,8 @@ const Home = () => {
           <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-[0.2em] leading-tight">
             THE FUTURE OF
             <br />
-            <span className="text-primary">WEB DEVELOPMENT</span>
+            <span className="text-primary">{displayText}</span>
+            <span className="inline-block w-1.5 h-8 md:h-10 align-middle ml-1 bg-white/80 animate-pulse" />
           </h1>
           {/* Tube light underline */}
           <div className="tube-container mb-10">

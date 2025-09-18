@@ -5,7 +5,10 @@ import Contact from "./pages/Contact";
 import Navigation from "./components/Navigation";
 
 const App = () => (
-  <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+  <BrowserRouter
+    basename={import.meta.env.BASE_URL} // 👈 important
+    future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+  >
     <div className="min-h-screen bg-background text-foreground relative">
       <div className="bg-fx" />
       <Navigation />

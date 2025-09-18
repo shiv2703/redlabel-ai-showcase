@@ -14,7 +14,7 @@ const Contact = () => {
           <video className="w-full h-full object-cover opacity-50" autoPlay muted loop playsInline preload="metadata">
             <source src="/videos/hero-contact.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center items-center text-center">
@@ -95,7 +95,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
               <h3 className="text-3xl font-bold text-gray-900 mb-8 tracking-wide">SEND US A MESSAGE</h3>
-
+              
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -118,7 +118,7 @@ const Contact = () => {
                     <Input id="email" type="email" placeholder="your@email.com" className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 h-14 text-lg" />
                   </div>
                 </div>
-
+                
                 <div>
                   <Label htmlFor="role" className="text-gray-900 font-semibold mb-3 block tracking-wide">ROLE / AREA OF INTEREST</Label>
                   <select id="role" className="w-full h-14 bg-white border border-gray-300 rounded-md px-4 text-gray-900 text-lg">
@@ -135,12 +135,12 @@ const Contact = () => {
                   <Label htmlFor="message" className="text-gray-900 font-semibold mb-3 block tracking-wide">MESSAGE (OPTIONAL)</Label>
                   <Textarea id="message" rows={6} placeholder="Tell us about your project..." className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 text-lg resize-none" />
                 </div>
-
+                
                 <div>
                   <Label htmlFor="resume" className="text-gray-900 font-semibold mb-3 block tracking-wide">RESUME</Label>
                   <Input id="resume" type="file" accept=".pdf,.doc,.docx" className="bg-white border-gray-300 text-gray-900 h-14 text-lg" />
                 </div>
-
+                
                 <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg font-semibold tracking-wide">
                   SEND MESSAGE <ArrowRight className="ml-2" />
                 </Button>
@@ -162,9 +162,9 @@ const Contact = () => {
             Join hundreds of satisfied clients who have transformed their businesses with our solutions
           </p>
           <a href="/contact">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg tracking-wide">
-              Schedule Free Consultation <ArrowRight className="ml-2" />
-            </Button>
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg tracking-wide">
+            Schedule Free Consultation <ArrowRight className="ml-2" />
+          </Button>
           </a>
         </div>
       </section>
